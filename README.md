@@ -17,7 +17,7 @@ Access our [**exclusive telegram channel**](https://bit.ly/ErickWendelContentHub
 - Testing
     - Unit
         - [ ] it should test when the application throws an error
-        - [ ] it should test all files on the routes layer
+        - [x] it should test all files on the routes layer
         - [ ] it should test all files on the repositories layer
         - [ ] it should test all files on the factories layer
         - Plus
