@@ -4,7 +4,8 @@ import { DEFAULT_HANDLER } from '../util/util.js'
 
 const routes = ({ heroService }) => ({
     '/heroes:get': async (request, response) => {
-        response.write('GET')
+        const heroes = await heroService.find()
+        response.write(JSON.stringify({ results: heroes }))
         response.end()
     },
 
@@ -13,7 +14,8 @@ const routes = ({ heroService }) => ({
         const item = JSON.parse(data)
         const hero = new Hero(item)
 
-        const id = hero.id
+        const id = await heroService.create(hero)
+
         response.writeHead(201, DEFAULT_HANDLER)
         response.write(JSON.stringify({
             success: 'User created with success!',
