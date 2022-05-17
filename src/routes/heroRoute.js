@@ -5,8 +5,9 @@ import { DEFAULT_HANDLER } from '../util/util.js'
 const routes = ({ heroService }) => ({
     '/heroes:get': async (request, response) => {
         const heroes = await heroService.find()
+
         response.write(JSON.stringify({ results: heroes }))
-        response.end()
+        return response.end()
     },
 
     '/heroes:post': async (request, response) => {

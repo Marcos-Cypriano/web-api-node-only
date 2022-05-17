@@ -6,7 +6,7 @@ export default class HeroService {
     }
 
     find() {
-        return this.heroRepository.find
+        return this.heroRepository.find()
     }
 
     create(data) {
