@@ -12,4 +12,12 @@ export default class HeroService {
     create(data) {
         return this.heroRepository.create(data)
     }
+
+    alter(data) {
+        return this.heroRepository.alter(data)
+    }
+
+    delete(data) {
+        return this.heroRepository.delete(data)
+    }
 }

@@ -11,7 +11,7 @@ Access our [**exclusive telegram channel**](https://bit.ly/ErickWendelContentHub
 - Web API
     - [x] it should have an endpoint for storing heroes' data
     - [x] it should have an endpoint for retrieving heroes' data
-    - [ ] it should have an endpoint for updating heroes' data
+    - [x] it should have an endpoint for updating heroes' data
     - [ ] it should have an endpoint for deleting heroes' data
 
 - Testing

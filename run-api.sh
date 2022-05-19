@@ -12,3 +12,10 @@ curl \
 -d '{"invalid json payload"}' \
 localhost:3000/heroes
 # {"error":"internet server error!"}
+
+curl \
+-X PATCH \
+-d '{ "id": "3015490a-ed5c-4f6c-b14b-843ea87601f7", "name": "Batman" }' \
+localhost:3000/hero
+# {"succes":"Hero altered with success!","id":"3015490a-ed5c-4f6c-b14b-843ea87601f7"}
+
