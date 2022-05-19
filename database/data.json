@@ -1,14 +1,1 @@
-[
-    {
-        "id": "3015490a-ed5c-4f6c-b14b-843ea87601f7",
-        "name": "Batman",
-        "age": 50,
-        "power": "rich"
-    },
-    {
-        "id": "252ae8ad-fd41-4c0e-b835-2ebaffb0919c",
-        "name": "Flash",
-        "age": 29,
-        "power": "speed"
-    }
-]
+[{"id":"fce38aef-8d88-43bb-aa7a-8f0b6c26f0fa","name":"Batman","age":50,"power":"rich"},{"id":"e56d29d7-e243-4c93-932d-75671a7afc27","name":"Flash","age":29,"power":"high speed"}]

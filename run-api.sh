@@ -15,7 +15,12 @@ localhost:3000/heroes
 
 curl \
 -X PATCH \
--d '{ "id": "3015490a-ed5c-4f6c-b14b-843ea87601f7", "name": "Batman" }' \
-localhost:3000/hero
+-d '{"id": "fce38aef-8d88-43bb-aa7a-8f0b6c26f0fa", "name": "Bruce Wayne"}' \
+localhost:3000/heroes
 # {"succes":"Hero altered with success!","id":"3015490a-ed5c-4f6c-b14b-843ea87601f7"}
 
+curl \
+-X DELETE \
+-d '{"id": "ab8d561c-9a8b-44e9-a588-de2de788bf31"}' \
+localhost:3000/heroes
+# {"succes":"Hero deleted with success!"}

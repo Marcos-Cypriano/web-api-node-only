@@ -25,20 +25,19 @@ export default class HeroRepository {
     }
 
     async alter(data) {
-        console.log(data)
         const currentFile = await this.#currentFileContent()
-        const hero = await currentFile.find((hero) => hero.id == data.id)
+        const heroIndex = await currentFile.findIndex((hero) => hero.id == data.id)
 
         if (data.name) {
-            hero.name = data.name
+            currentFile[heroIndex].name = data.name
         }
 
         if (data.age) {
-            hero.age = data.age
+            currentFile[heroIndex].age = data.age
         }
 
         if (data.power) {
-            hero.power = data.power
+            currentFile[heroIndex].power = data.power
         }
 
         await writeFile(this.file, JSON.stringify(currentFile))
@@ -48,18 +47,12 @@ export default class HeroRepository {
 
     async delete(data) {
         const currentFile = await this.#currentFileContent()
+        const heroIndex = await currentFile.findIndex((hero) => hero.id == data.id)
 
-        try{
-            await currentFile.delete((hero) => hero.id == data.id)
+        currentFile.splice(heroIndex, 1)
 
-            return JSON.stringify({
-                message: "Hero deleted with success!"
-            })
-        } catch (err) {
-            return JSON.stringify({
-                error: err
-            })
-        }
+        await writeFile(this.file, JSON.stringify(currentFile))
+        return { message: "Hero deleted with success!" }
     }
 }
 

@@ -25,36 +25,31 @@ const routes = ({ heroService }) => ({
         return response.end()
     },
 
-    '/hero:patch': async (request, response) => {
+    '/heroes:patch': async (request, response) => {
         const data = await once(request, 'data')
         const item = JSON.parse(data)
 
         const id = await heroService.alter(item)
 
-        response.writeHead(200, DEFAULT_HANDLER)
+        response.writeHead(202, DEFAULT_HANDLER)
         response.write(JSON.stringify({
             succes: "Hero altered with success!",
             id
         }))
+        return response.end()
     },
 
-    '/hero:delete': async (request, response) => {
+    '/heroes:delete': async (request, response) => {
         const data = await once(request, 'data')
         const item = JSON.parse(data)
 
         const result = await heroService.delete(item)
 
-        if (result.message) {
-            response.writeHead(200, DEFAULT_HANDLER)
-            response.write(JSON.stringify({
-                succes: "Hero deleted with success!"
+        response.writeHead(202, DEFAULT_HANDLER)
+        response.write(JSON.stringify({
+            succes: result.message
         }))
-        }
-
-        if (result.err) {
-            response.writeHead(400, DEFAULT_HANDLER)
-            response.write(JSON.stringify(result.err))
-        }
+        return response.end()
     }
 })
 
