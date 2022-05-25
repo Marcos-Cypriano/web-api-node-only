@@ -25,9 +25,9 @@ Access our [**exclusive telegram channel**](https://bit.ly/ErickWendelContentHub
 
     - Integration / E2E
         - [x] it should test the endpoint for storing heroes' data
-        - [ ] it should test the endpoint for retrieving heroes' data
-        - [ ] it should test the endpoint for updating heroes' data
-        - [ ] it should test the endpoint for deleting heroes' data
+        - [x] it should test the endpoint for retrieving heroes' data
+        - [x] it should test the endpoint for updating heroes' data
+        - [x] it should test the endpoint for deleting heroes' data
         - [ ] it should test when the application throws an error
 
 ### Notes

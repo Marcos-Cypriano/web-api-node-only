@@ -6,6 +6,7 @@ const routes = ({ heroService }) => ({
     '/heroes:get': async (request, response) => {
         const heroes = await heroService.find()
 
+        response.writeHead(200, DEFAULT_HANDLER)
         response.write(JSON.stringify({ results: heroes }))
         return response.end()
     },
@@ -33,7 +34,7 @@ const routes = ({ heroService }) => ({
 
         response.writeHead(202, DEFAULT_HANDLER)
         response.write(JSON.stringify({
-            succes: "Hero altered with success!",
+            success: "Hero altered with success!",
             id
         }))
         return response.end()
@@ -47,7 +48,7 @@ const routes = ({ heroService }) => ({
 
         response.writeHead(202, DEFAULT_HANDLER)
         response.write(JSON.stringify({
-            succes: result.message
+            success: result.message
         }))
         return response.end()
     }
