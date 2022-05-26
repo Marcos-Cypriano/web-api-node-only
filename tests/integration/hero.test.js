@@ -1,6 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert'
 import { promisify } from 'node:util'
+import { isTypedArray } from 'node:util/types'
 
 test('Hero Integration Test Suite', async (t) => {
     const testPort = 9009
@@ -44,10 +45,6 @@ test('Hero Integration Test Suite', async (t) => {
             method: 'GET'
         })
 
-        assert.deepStrictEqual(request.headers.get('content-type'), 'application/json')
-
-        assert.strictEqual(request.status, 200)
-
         const result = await request.json()
         assert.notEqual(result.length, 0)
     })
@@ -89,6 +86,22 @@ test('Hero Integration Test Suite', async (t) => {
 
         const result = await request.json()
         assert.deepStrictEqual(result.success, 'Hero deleted with success!')
+    })
+
+    await t.test('should return an error', async () => {
+        const data = 'Invalid payload'
+
+        const request = await fetch(testServerAddress, {
+            method: 'POST',
+            body: data
+        })
+        
+        assert.deepStrictEqual(request.headers.get('content-type'), 'application/json')
+
+        assert.strictEqual(request.status, 500)
+
+        const result = await request.json()
+        assert.deepStrictEqual(result.error, 'internet server error!')
     })
 
     await promisify(server.close.bind(server))()

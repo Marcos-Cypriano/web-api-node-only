@@ -6,7 +6,6 @@ const routes = ({ heroService }) => ({
     '/heroes:get': async (request, response) => {
         const heroes = await heroService.find()
 
-        response.writeHead(200, DEFAULT_HANDLER)
         response.write(JSON.stringify({ results: heroes }))
         return response.end()
     },

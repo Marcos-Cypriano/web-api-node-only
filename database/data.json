@@ -1,14 +1,1 @@
-[
-    {
-        "id": "fce38aef-8d88-43bb-aa7a-8f0b6c26f0fa",
-        "name": "Bruce Wayne",
-        "age": 50,
-        "power": "rich"
-    },
-    {
-        "id": "e56d29d7-e243-4c93-932d-75671a7afc27",
-        "name": "Barry Allen",
-        "age": 31,
-        "power": "super high speed"
-    }
-]
+[{"id":"fce38aef-8d88-43bb-aa7a-8f0b6c26f0fa","name":"Bruce Wayne","age":50,"power":"rich"},{"id":"e56d29d7-e243-4c93-932d-75671a7afc27","name":"Barry Allen","age":31,"power":"super high speed"}]

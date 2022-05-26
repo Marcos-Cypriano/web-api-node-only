@@ -27,7 +27,6 @@ test('Hero routes - endpoints test suite', async (t) => {
         const endpoints = routes({ heroService: heroServiceStub })
 
         const endpoint = '/heroes:get'
-        // A função once no heroRoute retorna o erro 'The "emitter" argument must be an instance of EventEmitter. Received an instance of Object'
         const request = {}
         const response = {
             write: callTracker.calls(item => {
@@ -57,14 +56,11 @@ test('Hero routes - endpoints test suite', async (t) => {
         const endpoints = routes({ heroService: heroServiceStub })
 
         const endpoint = '/heroes:post'
+        // A função once no heroRoute retorna o erro 'The "emitter" argument must be an instance of EventEmitter. Received an instance of Object'
         const request = {
-            url: '/heroes',
-            method: 'POST',
-            data: {
-                name: 'Flash',
-                age: 29,
-                power: 'speed'
-            }
+            name: 'Flash',
+            age: 29,
+            power: 'speed'
         }
         
         const response = {
